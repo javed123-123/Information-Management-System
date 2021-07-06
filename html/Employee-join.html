@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="../bs/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/joint.css" rel="stylesheet">
+    <script src="../js/employee_join.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+    <script src="../js/jquery.PrintArea.js" type="text/JavaScript" language="javascript"></script>
+    <title>Employee-Join</title>
+</head>
+
+<body>
+    <nav class="bg-light d-flex">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="employee.html">Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="paystruct.html">Pay Structure</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="factory.html">Factory</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="phone.html">Models</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Production.html">Production</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="Employee-join.html">Join-Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Production-join.html">Join-Production</a>
+            </li>
+        </ul>
+
+        <a id="log-out" class="btn btn-outline-dark rounded-pill my-auto ms-auto" href="login.html">logout</a>
+    </nav>
+
+    <main>
+        <div id="input-fields" class="border-end py-3 px-4 d-flex flex-column">
+
+            <div>
+                <div id="select" class="mb-5">
+                    <h5>Choose tables to be joined:</h5>
+                    <select name="join_table" id="join_table" class="form-select">
+                        <option value="">-- Select join table --</option>
+                        <option value="fno">Factory</option>
+                        <option value="lno">Pay structure</option>
+                    </select>
+                </div><br>
+
+                <div class="mb-4">
+                    <p hidden id="error_no" class="error mt-2">error</p>
+                    <div hidden id="search_input" class="input-group">
+                        <input type="number" placeholder="Enter No." class="form-control" id="search_no">
+                        <button class="btn btn-primary px-3">Go</button>
+                    </div>
+                </div>
+
+                <!-- <div id="actual-tabl_paystruct">
+                    <table hidden id="paystruct_table" class="table table-bordered border-dark table-responsive table-striped table-hover m-0">
+                        <thead class="table-dark">
+                            <th>Level No</th>
+                            <th>Name</th>
+                            <th>Salary</th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                
+
+                <div id="actual-tabl_factory">
+                    <table hidden id="factory_table" class="table table-bordered border-dark table-responsive table-striped table-hover m-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Fact No</th>
+                                <th>Address</th>
+                                <th>Capacity</th>
+                                <th>Establishement date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div> -->
+                <div id="factory_print">
+                <div class="card pt-2" id="factory_card" hidden>
+                    <h4 class="ps-4" style="text-decoration: underline;">Details of Factory</h4>
+
+                    <div id="c-body" class="card-body">
+                        <div class="row">
+                            <label>Factory No<span>:</span></label>
+                            <p>dummy</p>
+                        </div>
+                        <div class="row">
+                            <label>Address<span>:</span></label>
+                            <p>dummy</p>
+                        </div>
+                        <div class="row">
+                            <label>Capacity<span>:</span></label>
+                            <p>dummy</p>
+                        </div>
+                        <div class="row">
+                            <label>Established<span>:</span></label>
+                            <p>dummy</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <div id="paystruct_print">
+                <div class="card pt-2" id="paystruct_card" hidden>
+                    <h4 class="ps-4" style="text-decoration: underline;">Details of Level</h4>
+
+                    <div id="c-body" class="card-body">
+                        <div class="row">
+                            <label>Level No<span>:</span></label>
+                            <p>dummy</p>
+                        </div>
+                        <div class="row">
+                            <label>Level name<span>:</span></label>
+                            <p>dummy</p>
+                        </div>
+                        <div class="row">
+                            <label>Salary<span>:</span></label>
+                            <p>dummy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="mt-auto d-flex justify-content-center px-4 prints mb-4">
+                <button id="print" class="btn btn-primary me-2">
+                    <span class="me-1">Print Report</span>
+                    <img src="../imgs/outline_print_black_24dp.png" alt="">
+                </button>
+                <button id="flush" class="btn btn-danger ms-2">
+                    <span class="me-1">Clear Report</span>
+                    <img src="../imgs/outline_backspace_black_24dp.png" alt="">
+                </button>
+            </div>
+        </div>
+
+        <div id="the-data" class="px-4 py-3">
+            <div id="tabl" class="mb-4">
+                <div class="d-flex mb-3">
+                    <div id="desc" class="ms-auto d-flex">
+                        <input id="desc2" type="text" class="form-control m-0" placeholder="( Title for the table to be printed )">
+                        <button id="add2" class="btn btn-primary">Add To Report</button>
+                    </div>
+                </div>
+
+                <div id="actual-tabl">
+                    <table id="employee_table" class="table table-bordered border-dark table-responsive table-striped table-hover m-0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Join Date</th>
+                                <th>Level No</th>
+                                <th>Factory No</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <hr>
+
+            <div id="graph" class="mb-5 mt-4">
+                <div class="d-flex mb-3">
+                    <div id="descX" class="ms-auto d-flex">
+                        <input hidden id="desc3" type="text" class="form-control m-0" placeholder="( Title for the graph to be printed )">
+                        <button hidden id="add3" class="btn btn-primary">Add To Report</button>
+                    </div>
+                </div>
+
+                <div hidden id="contain"><div id='container'></div></div>
+            </div>
+
+            <div hidden id="other" class="card col-3 mx-auto">
+                <div class="card-body">
+                    <div class="row">
+                        <label>Average Salary<span>:</span></label>
+                        <p id='avg'>dummy</p>
+                    </div>
+                    <div class="row">
+                        <label>Maximum Salary<span>:</span></label>
+                        <p id='max'>dummy</p>
+                    </div>
+                    <div class="row">
+                        <label>Minimum Salary<span>:</span></label>
+                        <p id='min'>dummy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <div hidden id="secret"></div>
+</body>
+
+</html>

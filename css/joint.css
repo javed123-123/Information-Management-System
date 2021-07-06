@@ -1,0 +1,126 @@
+@import url("PT/PT-font-stylesheet.css");
+.btn {
+    font-family: "pt_sansbold", "Segoe UI", "Times New Roman";
+    letter-spacing: 1px;
+}
+#select h5 {
+    font-family: 'pt_sansitalic', "Segoe UI", "Times New Roman";
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "pt_sansregular", "Segoe UI", "Times New Roman";
+}
+
+nav {
+    height: 7%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: "pt_sansregular", "Segoe UI", "Times New Roman";
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+nav > ul {
+    font-size: 1.2em;
+    margin-top: auto;
+}
+
+main {
+    height: 93%;
+    display: flex;
+}
+
+#input-fields {
+    width: 25%;
+    overflow: auto;
+}
+.error {
+    color: red;
+    text-align: center;
+}
+
+.row,
+*[class*="col"] {
+    padding: 0;
+    margin: 0;
+}
+
+.card {
+    border-radius: 20px;
+}
+
+.card-body label {
+    width: 50%;
+    display: flex;
+}
+
+.card-body p {
+    width: 50%;
+    text-align: end;
+}
+
+.card-body span {
+    margin-left: auto;
+}
+
+.prints button {
+    font-size: 24px;
+}
+.prints img {
+    opacity: 0.7;
+}
+
+#the-data {
+    width: 75%;
+    overflow-y: auto;
+}
+
+#tabl {
+    height: 100%;
+}
+
+#table-nav button {
+    padding: 0;
+    background-color: white;
+    border: none;
+}
+#table-nav span {
+    text-decoration: underline;
+}
+#desc input {
+    height: 100%;
+    width: 50rem;
+    border-radius: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#desc button {
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#actual-tabl {
+    max-height: 92.95%;
+    overflow-y: scroll;
+    text-align: center;
+}
+th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+#actual-graph {
+    width: 50rem;
+    height: 41rem;
+}
+thead{
+    background-color: black;
+    color:white;
+}
+#secret{
+    text-align:center;
+}

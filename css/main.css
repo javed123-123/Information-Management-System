@@ -1,0 +1,258 @@
+@import url('PT/PT-font-stylesheet.css');
+.btn {
+    font-family: 'pt_sansbold', 'Segoe UI', 'Times New Roman';
+    letter-spacing: 1px;
+}
+.label-head {
+    font-family: 'pt_sansitalic', "Segoe UI", "Times New Roman";
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-family: 'pt_sansregular', 'Segoe UI', 'Times New Roman';
+}
+
+nav {
+    height: 7%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: 'pt_sansregular', 'Segoe UI', 'Times New Roman';
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+nav > ul {
+    font-size: 1.2em;
+    margin-top: auto;
+}
+
+main {
+    height: 93%;
+    display: flex;
+}
+
+#input-fields {
+    width: 25%;
+    overflow: auto;
+}
+
+/*        filters          */
+
+.accbtn2 {
+    background-color: rgba(211, 211, 211, 0.411);
+}
+
+#collapseTwo {
+    transition: height 100ms linear;
+}
+
+.input-group-text,
+.form-control,
+#button-addon2,
+.form-select {
+    padding: 0;
+}
+.input-group-text {
+    padding-right: 0.4rem;
+    padding-left: 0.4rem;
+}
+.form-control {
+    padding-left: 0.4rem;
+    height: 2.2rem;
+}
+#button-addon2 {
+    padding-right: 0.4rem;
+    padding-left: 0.4rem;
+}
+.form-select {
+    height: 2.2rem;
+    padding-left: 0.4rem;
+}
+
+#xyz {
+    margin-bottom: 0;
+    margin-right: 5%;
+}
+#xyz > li {
+    margin-bottom: 1.5rem;
+}
+#xyz label {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 100%;
+    font-size: 1rem;
+}
+#xyz textarea {
+    height: 4.6rem;
+    resize: none;
+}
+.prints button {
+    font-size: 24px;
+}
+.prints img {
+    opacity: 0.7;
+}
+
+/*        for the table        */
+
+#the-rest {
+    width: 75%;
+}
+
+#desc input {
+    height: 100%;
+    width: 50rem;
+    border-radius: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#desc button {
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#table-nav button {
+    padding: 0;
+    background-color: white;
+    border: none;
+}
+#table-nav span {
+    text-decoration: underline;
+}
+
+#the-table {
+    max-height: 92.95%;
+    overflow-y: scroll;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/*        for the popups (modal)      */
+
+.context-menu {
+    display: none;
+}
+.context-menu {
+    z-index: 20;
+    position: absolute;
+}
+.context-menu button {
+    float: none;
+    width: 100%;
+    padding: 7px 12px;
+    border: none;
+    outline: none;
+    display: block;
+    text-align: left;
+}
+.context-menu button:hover {
+    background-color: #ddd;
+}
+.context-menu button:active {
+    background-color: rgba(59, 58, 58, 0.5);
+}
+.context-menu--active {
+    display: block;
+}
+
+
+
+#add_popup,
+#edit_popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.541);
+    z-index: 30;
+    display: none;
+}
+
+#add-data,
+#update-data {
+    width: 25%;
+    overflow: auto;
+    position: absolute;
+    left: 50%;
+    margin-left: -276px;
+    top: 12%;
+    border: 5px solid rgba(160, 157, 157, 0.568);
+    border-radius: 15px;
+    background-color: whitesmoke;
+    text-align: initial;
+    transition: height 100ms linear;
+    max-height: 750px;
+    overflow-y: auto;
+}
+#header {
+    background-color: rgb(0, 0, 0);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    color: white;
+}
+#add-data section,
+#update-data section {
+    display: flex;
+    margin-bottom: 2rem;
+}
+#add-data label,
+#update-data label {
+    width: 28%;
+    padding-top: 1%;
+    font-size: 20px;
+}
+#add-data input,
+#update-data input {
+    margin-left: auto;
+    width: 60%;
+}
+#actual-add-data p,
+#actual-update-data p {
+    margin-bottom: 1%;
+    text-align: left;
+    margin-left: 40%;
+    font-size: 18px;
+    color: red;
+}
+#error_add, #error_update {
+    margin-bottom: 1%;
+    text-align: center;
+    font-size: 18px;
+    color: red;
+}
+#add-data button,
+#update-data button {
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+#add-data .for-phones input {
+    width: 100%;
+}
+#add-data textarea {
+    width: 60%;
+    margin-left: auto;
+    height: 6.6rem;
+    resize: none;
+}
+.error{
+    margin-bottom: 1%;
+    text-align: center;
+    font-size: 18px;
+    color: red;
+}
+thead{
+    background-color: black;
+    color:white;
+}
+#secret{
+    text-align:center;
+}

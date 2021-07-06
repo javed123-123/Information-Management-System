@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="../bs/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
+    <script src="../js/factory.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/jquery.PrintArea.js" type="text/JavaScript" language="javascript"></script>
+
+    <title>Factory</title>
+</head>
+
+<body>
+    <nav class="bg-light d-flex">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="employee.html">Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="paystruct.html">Pay Structure</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="factory.html">Factory</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="phone.html">Models</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Production.html">Production</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Employee-join.html">Join-Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Production-join.html">Join-Production</a>
+            </li>
+        </ul>
+
+        <a id="log-out" class="btn btn-outline-dark rounded-pill my-auto ms-auto" href="login.html">logout</a>
+
+    </nav>
+
+    <main>
+        <div id="input-fields" class="border-end py-3 d-flex flex-column">
+
+            <div>
+                <div class="accbtn2 btn d-flex rounded-0 btn-lg" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo">
+                    <img src="../imgs/round_filter_alt_black_24dp.png">
+                    <span class="ms-2">Filter Rows</span>
+                </div>
+                <div id="collapseTwo" class="show border-bottom">
+                    <fieldset id="search-sort" class="container-fluid m-0 p-0 d-flex flex-column px-2 pe-3 mt-3">
+                        <ul id="xyz">
+
+                            <li id="address">
+                                <div>
+                                    <textarea placeholder="Search by Address" class="form-control"
+                                        id="address-search"></textarea>
+                                </div>
+                            </li>
+
+                            <li id="capacity">
+                                <div class="row">
+                                    <div class="input-group col">
+                                        <input type="number" class="form-control" placeholder="min-capacity"
+                                            id="capacity-min">
+                                    </div>
+
+                                    <div class="input-group col">
+                                        <input type="number" class="form-control" placeholder="max-capacity"
+                                            id="capacity-max">
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li id="est-date">
+                                <div>
+                                    <label style="text-align: left;" class="label-head">Established between: </label>
+
+                                    <div>
+                                        <input id="est-min" type="date" class="form-control">
+                                        <label class="mx-auto label-head">&</label>
+                                        <input id="est-max" type="date" class="form-control">
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li id="sort-attr">
+                                <select name="sort" id="sort" class="form-select">
+                                    <option value=null>Sort by attribute</option>
+                                    <option value=fact_no>Factory No</option>
+                                    <option value=address>Address</option>
+                                    <option value=capacity>Capacity</option>
+                                    <option value=est>Establishement date</option>
+                                </select>
+                            </li>
+                        </ul>
+                        <button id="clear" class="btn btn-danger col-4 mx-auto mb-2">Clear filters</button>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="mt-auto d-flex justify-content-center px-4 prints mb-4">
+                <button id="print" class="btn btn-primary me-2">
+                    <span class="me-1">Print Report</span>
+                    <img src="../imgs/outline_print_black_24dp.png" alt="">
+                </button>
+                <button id="flush" class="btn btn-danger ms-2">
+                    <span class="me-1">Clear Report</span>
+                    <img src="../imgs/outline_backspace_black_24dp.png" alt="">
+                </button>
+            </div>
+        </div>
+
+
+        <div id="the-rest" class="px-4 py-3">
+            <div class="d-flex mb-3">
+                <button id="addbtn_popup" class="collapsed accbtn1 d-flex btn btn-outline-dark rounded-pill">
+                    <img src="../imgs/insert-row.png" alt="" class="me-2 my-auto">
+                    <div class="d-inline-block">INSERT ROW</div>
+                </button>
+
+                <div id="desc" class="d-flex ms-auto">
+                    <input id="description" type="text" class="form-control m-0" placeholder="( Title for the table to be printed )">
+                    <button id="add" class="btn btn-primary">Add To Report</button>
+                </div>
+            </div>
+
+            <div id="the-table">
+                <table class="table table-bordered border-dark table-responsive table-striped table-hover m-0">
+                    <thead>
+                        <tr>
+                            <th>Factory No</th>
+                            <th>Address</th>
+                            <th>Capacity</th>
+                            <th>Estd. on</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <div class="context-menu">
+        <button class="context-menu-edit">Edit</button>
+        <button class="context-menu-delete">Delete</button>
+    </div>
+
+    <div id="add_popup">
+        <fieldset id="add-data">
+            <div id="header" class="border-bottom p-3">
+                <h3>Details of Factory</h3>
+            </div>
+            <div id="actual-add-data" class="p-4 pb-2 pt-3">
+                <p hidden id="error_fact_no" class="error">error is shown here</p>
+                <section>
+                    <label for="fact_no-input">Factory No </label>
+                    <input type="number" id="fact_no-input" class="form-control" />
+                </section>
+
+                <p hidden id="error_address" class="error">error is shown here</p>
+                <section>
+                    <label for="address-input">Address </label>
+                    <textarea id="address-input" class="form-control"></textarea>
+                </section>
+
+                <p hidden id="error_capacity" class="error">error is shown here</p>
+                <section>
+                    <label for="capacity-input">Capacity </label>
+                    <input type="number" id="capacity-input" class="form-control" />
+                </section>
+
+                <p hidden id="error_est" class="error">error is shown here</p>
+                <section>
+                    <label for="est-input">Established </label>
+                    <input type="date" id="est-input" class="form-control" />
+                </section>
+            </div>
+
+            <div class="for-phones">
+                <h5 class="ps-4">Enter IDs of 3 models to be produced at this factory:</h5>
+                <ol style="list-style-type: decimal;" class="px-5 mt-3">
+                    <p id="error_phone1" hidden class="error">error is shown here</p>
+                    <li class="mb-4"><input id="phone1-input" placeholder="Phone no.1 ID" type="number"
+                            class="form-control ms-2"></li>
+                    <p id="error_phone2" hidden class="error">error is shown here</p>        
+                    <li class="mb-4"><input id="phone2-input" placeholder="Phone no.2 ID" type="number"
+                            class="form-control ms-2"></li>
+                    <p id="error_phone3" hidden class="error">error is shown here</p>         
+                    <li class="mb-4"><input id="phone3-input" placeholder="Phone no.3 ID" type="number"
+                            class="form-control ms-2"></li>
+                </ol>
+            </div>
+
+            <p hidden id="error_add" class="error">error is shown here</p>
+            <div class="d-flex justify-content-between px-5 mx-5">
+                <button id="add-data-btn" class="btn btn-outline-primary">Add</button>
+                <button id="add_closeimg" class="btn btn-outline-danger">Cancel</button>
+            </div>
+        </fieldset>
+    </div>
+
+    <div id="edit_popup">
+        <fieldset id="update-data">
+            <div id="header" class="border-bottom p-3">
+                <h3>Edit Details of Factory</h3>
+            </div>
+            <div id="actual-update-data" class="p-4 pb-2 pt-3">
+
+                <p hidden id="error_address_update" class="error">error is shown here</p>
+                <section>
+                    <label for="update-address-input">Name </label>
+                    <input type="text" id="update-address-input" class="form-control" />
+                </section>
+
+                <p hidden id="error_capacity_update" class="error">error is shown here</p>
+                <section>
+                    <label for="update-capacity-input">Capacity</label>
+                    <input type="number" id="update-capacity-input" class="form-control" />
+                </section>
+
+                <p hidden id="error_est_update" class="error">error is shown here</p>
+                <section>
+                    <label for="update-est-input">Join Date </label>
+                    <input type="date" id="update-est-input" class="form-control" />
+                </section>
+
+
+            <div class="d-flex justify-content-between px-5 mx-5">
+                <button id="update-row-btn" class="btn btn-outline-primary">Update</button>
+                <button id="edit_closeimg" class="btn btn-outline-danger">Cancel</button>
+            </div>
+        </fieldset>
+    </div>
+    <div hidden id="secret"></div>
+</body>
+
+</html>

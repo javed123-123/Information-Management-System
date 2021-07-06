@@ -1,0 +1,6 @@
+.vscode/
+bs/
+css/PT/
+imgs/
+server/node_modules/
+server/.env

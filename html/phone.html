@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="../bs/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/phone.js" defer></script>
+    <script src="../js/jquery.PrintArea.js" type="text/JavaScript" language="javascript"></script>
+
+    <title>Models</title>
+</head>
+
+<body>
+    <nav class="bg-light d-flex">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="employee.html">Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="paystruct.html">Pay Structure</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="factory.html">Factory</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="phone.html">Models</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Production.html">Production</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Employee-join.html">Join-Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Production-join.html">Join-Production</a>
+            </li>
+        </ul>
+
+        <a id="log-out" class="btn btn-outline-dark rounded-pill my-auto ms-auto" href="login.html">logout</a>
+
+    </nav>
+
+    <main>
+        <div id="input-fields" class="border-end py-3 d-flex flex-column">
+
+            <div>
+                <div class="accbtn2 btn d-flex rounded-0 btn-lg" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo">
+                    <img src="../imgs/round_filter_alt_black_24dp.png">
+                    <span class="ms-2">Filter Rows</span>
+                </div>
+                <div id="collapseTwo" class="show border-bottom">
+                    <fieldset id="search-sort" class="container-fluid m-0 p-0 d-flex flex-column px-2 pe-3 mt-3">
+
+                        <ul id="xyz">
+                            <li id="pname-search">
+                                <div>
+                                    <input id="modelName" type="text" class="form-control"
+                                        placeholder="search by model name">
+                                </div>
+                            </li>
+
+                            <li id="cost">
+                                <div class="row">
+                                    <div class="input-group col">
+                                        <span class="input-group-text" id="basic-addon1">₹</span>
+                                        <input type="number" class="form-control" placeholder="min-cost" id="minCost">
+                                    </div>
+
+                                    <div class="input-group col">
+                                        <span class="input-group-text" id="basic-addon1">₹</span>
+                                        <input type="number" class="form-control" placeholder="max-cost" id="maxCost">
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li id="camera">
+                                <div class="row">
+                                    <div class="input-group col">
+                                        <input type="number" class="form-control" placeholder="rearcam" id="rearCam">
+                                        <span class="input-group-text" id="basic-addon1">MP</span>
+                                    </div>
+
+                                    <div class="input-group col">
+                                        <input type="number" class="form-control" placeholder="frontcam" id="frontCam">
+                                        <span class="input-group-text" id="basic-addon1">MP</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li id="battery">
+                                <div class="row">
+                                    <div class="input-group col">
+                                        <input type="number" class="form-control" placeholder="min-battery" id="minBat">
+                                        <span class="input-group-text" id="basic-addon1">mAh</span>
+                                    </div>
+
+                                    <div class="input-group col">
+                                        <input type="number" class="form-control" placeholder="max-battery" id="maxBat">
+                                        <span class="input-group-text" id="basic-addon1">mAh</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li id="processor">
+                                <div>
+                                    <input type="text" class="form-control" placeholder="search by processor"
+                                        id="processorm" />
+                                </div>
+                            </li>
+
+                            <li id="launch">
+                                <div>
+                                    <label style="text-align: left;" class="label-head">Models launched since: </label>
+                                    <input type="date" class="form-control" id="launchdatem" />
+                                </div>
+                            </li>
+
+                            <li id="sort-attr">
+                                <div class="">
+                                    <select name="sort" id="sort" class="form-select">
+                                        <option value="null">Sort by</option>
+                                        <option value="pid">Model ID</option>
+                                        <option value="pname">Model Name</option>
+                                        <option value="launch">Launch</option>
+                                        <option value="cost">Cost</option>
+                                        <option value="proc">Processor</option>
+                                        <option value="batt">Battery</option>
+                                        <option value="rcam">Rear cam</option>
+                                        <option value="fcam">Front cam</option>
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="btn btn-danger col-4 mx-auto mb-3">Clear filters</button>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="mt-auto d-flex justify-content-center px-4 prints mb-4">
+                <button id="print" class="btn btn-primary me-2">
+                    <span class="me-1">Print Report</span>
+                    <img src="../imgs/outline_print_black_24dp.png" alt="">
+                </button>
+                <button id="flush" class="btn btn-danger ms-2">
+                    <span class="me-1">Clear Report</span>
+                    <img src="../imgs/outline_backspace_black_24dp.png" alt="">
+                </button>
+            </div>
+        </div>
+
+
+        <div id="the-rest" class="px-4 py-3">
+            <div class="d-flex mb-3">
+                <button id="addbtn_popup" class="collapsed accbtn1 d-flex btn btn-outline-dark rounded-pill">
+                    <img src="../imgs/insert-row.png" alt="" class="me-2 my-auto">
+                    <div class="d-inline-block">INSERT ROW</div>
+                </button>
+
+                <div id="desc" class="d-flex ms-auto">
+                    <input id="description" type="text" class="form-control m-0"
+                        placeholder="( Title for the table to be printed )">
+                    <button id="add" class="btn btn-primary">Add To Report</button>
+                </div>
+            </div>
+
+            <div id="the-table">
+                <table class="table table-bordered border-dark table-responsive table-striped table-hover m-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Model ID</th>
+                            <th>Model Name</th>
+                            <th>Launch</th>
+                            <th>Cost</th>
+                            <th>Processor</th>
+                            <th>Battery</th>
+                            <th>Rear camera</th>
+                            <th>Front camera</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <div class="context-menu">
+        <button class="context-menu-edit">Edit</button>
+        <button class="context-menu-delete">Delete</button>
+    </div>
+
+
+    <div id="add_popup">
+        <fieldset id="add-data">
+            <div id="header" class="border-bottom p-3">
+                <h3>Details of Model</h3>
+            </div>
+            <div id="actual-add-data" class="p-4 pb-2 pt-3">
+                <p hidden id="error_phone_id" class="error">error is shown here</p>
+                <section>
+                    <label for="phone_id-input">Model ID </label>
+                    <input type="number" id="phone_id-input" class="form-control" />
+                </section>
+
+                <p hidden id="error_pname" class="error">error is shown here</p>
+                <section>
+                    <label for="pname-input">Model Name </label>
+                    <input type="text" id="pname-input" class="form-control" />
+                </section>
+
+                <p hidden id="error_launch" class="error">error is shown here</p>
+                <section>
+                    <label for="launch-input">launch date </label>
+                    <input type="date" id="launch-input" class="form-control" />
+                </section>
+
+                <p hidden id="error_cost" class="error">error is shown here</p>
+                <section>
+                    <label for="cost-input">Cost </label>
+                    <input type="number" id="cost-input" class="form-control" />
+                </section>
+
+                <p hidden id="error_proc" class="error">error is shown here</p>
+                <section>
+                    <label for="proc-input">Processor </label>
+                    <input type="text" id="proc-input" class="form-control" />
+                </section>
+
+                <p hidden id="error_battery" class="error">error is shown here</p>
+                <section>
+                    <label for="battery-input">Battery </label>
+                    <input type="number" id="battery-input" class="form-control" />
+                </section>
+
+                <p hidden id="error_rear_cam" class="error">error is shown here</p>
+                <section>
+                    <label for="rear_cam-input">Rear Camera </label>
+                    <input type="number" id="rear_cam-input" class="form-control" />
+                </section>
+
+                <p hidden id="error_front_cam" class="error">error is shown here</p>
+                <section>
+                    <label for="front_cam-input">Front Camera </label>
+                    <input type="number" id="front_cam-input" class="form-control" />
+                </section>
+            </div>
+
+            <p hidden id="error_add" class="error mb-3">error is shown here</p>
+            <div class="d-flex justify-content-between px-5 mx-5">
+                <button id="add-data-btn" class="btn btn-outline-primary">Add</button>
+                <button id="add_closeimg" class="btn btn-outline-danger">Cancel</button>
+            </div>
+
+        </fieldset>
+    </div>
+
+    <div id="edit_popup">
+        <fieldset id="update-data">
+            <div id="header" class="border-bottom p-3">
+                <h3>New Details of Model</h3>
+            </div>
+            <div id="actual-update-data" class="p-4 pb-2 pt-3">
+
+                <p hidden id="error_pname_e" class="error">error is shown here</p>
+                <section>
+                    <label for="pname-input_e">Model Name </label>
+                    <input type="text" id="pname-input_e" class="form-control" />
+                </section>
+
+                <p hidden id="error_launch_e" class="error">error is shown here</p>
+                <section>
+                    <label for="launch-input_e">launch date </label>
+                    <input type="date" id="launch-input_e" class="form-control" />
+                </section>
+
+                <p hidden id="error_cost_e" class="error">error is shown here</p>
+                <section>
+                    <label for="cost-input_e">Cost </label>
+                    <input type="number" id="cost-input_e" class="form-control" />
+                </section>
+
+                <p hidden id="error_proc_e" class="error">error is shown here</p>
+                <section>
+                    <label for="proc-input_e">Processor </label>
+                    <input type="text" id="proc-input_e" class="form-control" />
+                </section>
+
+                <p hidden id="error_battery_e" class="error">error is shown here</p>
+                <section>
+                    <label for="battery-input_e">Battery </label>
+                    <input type="number" id="battery-input_e" class="form-control" />
+                </section>
+
+                <p hidden id="error_rear_cam_e" class="error">error is shown here</p>
+                <section>
+                    <label for="rear_cam-input_e">Rear Camera </label>
+                    <input type="number" id="rear_cam-input_e" class="form-control" />
+                </section>
+
+                <p hidden id="error_front_cam_e" class="error">error is shown here</p>
+                <section>
+                    <label for="front_cam-input_e">Front Camera </label>
+                    <input type="number" id="front_cam-input_e" class="form-control" />
+                </section>
+            </div>
+
+            <p hidden id="error_update" class="error mb-3">error is shown here</p>
+            <div class="d-flex justify-content-between px-5 mx-5">
+                <button id="update-row-btn" class="btn btn-outline-primary">Update</button>
+                <button id="edit_closeimg" class="btn btn-outline-danger">Cancel</button>
+            </div>
+        </fieldset>
+    </div>
+    <div hidden id="secret"></div>
+</body>
+
+</html>
